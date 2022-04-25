@@ -48,8 +48,8 @@ class Script:
         print("starting browser...")
         self.browser.get(url)
         time.sleep(10)
-        self.enterInInput(login_username, "jakub.zavacky.2@city.ac.uk")
-        self.enterInInput(login_password, "Kun21vitezi.")
+        self.enterInInput(login_username, "")
+        self.enterInInput(login_password, "")
         self.clickOnElement(login_button)
 
 
