@@ -1,9 +1,15 @@
 from selenium import webdriver
 import time
 
+
+#You need to be changing just here lines!
+username = "email"
+password =  "password"
+rooms = [ "a226", "a227", "a308"]
+
+
+
 url = "https://cityuni.service-now.com/sp?id=sc_cat_item&sys_id=e06c3bbddb34a0905fb52de74b961953"
-url2 = "https://cityuni.service-now.com/sp?id=landing_city"
-login_redirect_button = """//*[@id="sp-nav-bar"]/ul[2]/li/a"""
 login_username = """/html/body/div[2]/div[2]/div[1]/div[2]/div/div/form/div[2]/div[1]/input"""
 login_password = """/html/body/div[2]/div[2]/div[1]/div[2]/div/div/form/div[2]/div[2]/input"""
 login_button = """/html/body/div[2]/div[2]/div[1]/div[2]/div/div/form/div[2]/div[4]/span"""
@@ -36,8 +42,6 @@ issue_select =          """/html/body/div[15]/ul/li[2]"""
 submit_button =         """/html/body/div[1]/section/main/div[1]/div/sp-page-row/div/div/span[1]/div/div/div[1]/div[2]/div/div[1]/div[3]/button"""
 
 
-rooms = [ "ag21", "ag22", "ag24a", "ag24b", "ag29a", "ag29b", "ag33", "ag34b", "ag35b", "ag35a", "ag36","a130", "a220", "a225", "a226", "a227", "a308"]
-
 class Script:
 
 
@@ -48,8 +52,8 @@ class Script:
         print("starting browser...")
         self.browser.get(url)
         time.sleep(10)
-        self.enterInInput(login_username, "")
-        self.enterInInput(login_password, "")
+        self.enterInInput(login_username, username)
+        self.enterInInput(login_password, password)
         self.clickOnElement(login_button)
 
 
